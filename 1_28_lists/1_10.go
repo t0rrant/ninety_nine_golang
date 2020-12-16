@@ -141,12 +141,12 @@ func isPalindrome(arr interface{}) bool {
 
 	switch arr.(type) {
 	case []int:
-		r := make([]int, length)
 		j := 0
-		for i := len(r) - 1; i >= 0; i-- {
-			if r[i] != r[j] {
+		for i := length - 1; i >= 0; i-- {
+			if arrValues.Index(i).Int() != arrValues.Index(j).Int() {
 				return false
 			}
+			j++
 		}
 		res = true
 	case string:
