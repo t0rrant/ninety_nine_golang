@@ -142,7 +142,7 @@ func isPalindrome(arr interface{}) bool {
 	switch arr.(type) {
 	case []int:
 		j := 0
-		for i := length - 1; i >= 0; i-- {
+		for i := length - 1; i >= j; i-- {
 			if arrValues.Index(i).Int() != arrValues.Index(j).Int() {
 				return false
 			}
