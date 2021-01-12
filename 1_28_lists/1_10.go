@@ -181,6 +181,13 @@ We have to define a new data type, because lists in Haskell are homogeneous.
 	λ> flatten (List [])
 	[]
 */
+func flatten(arr interface{}) interface{} {
+	return flatWalk(reflect.ArrayOf(0, reflect.TypeOf(arr)), arr)
+}
+
+func flatWalk(acc interface{}, arr interface{}) interface{} {
+	return acc
+}
 
 /*
 Problem 8
@@ -281,6 +288,12 @@ func main() {
 	fmt.Printf("Output: %v\n", isPalindrome(_string))
 	fmt.Printf("Input: %q\n", paString)
 	fmt.Printf("Output: %v\n", isPalindrome(paString))
+
+
+
+
+
+
 
 }
 
